@@ -50,6 +50,50 @@ public class HocSinh {
             this.dtb=dtb;
         }
     }
+    public void input(){
+        this.setMaSo(Util.inputString("Bạn hãy nhập mã số"));
+        this.setHoTen(Util.inputString("Bạn hãy nhập họ tên"));
+        this.setDtb(Util.inputFloat("Bạn hãy nhập điểm tb"));
+       
+    }
+    public void output(){
+        System.out.println(this.toString());
+    }
+    public String rank(){
+        String result;
+        if(dtb<5.5){
+            result="Yếu";
+        }
+        else if(dtb<6.5){
+            result="Trung bình";
+        }
+        else if(dtb<8.5){
+        result="Khá";
+               
+       }else{
+            result="Giỏi";
+        }
+        return result;
+    
+    }
+    public void changName(){
+
+        setHoTen(Util.inputString("Bạn hãy nhập tên cần chỉnh"));
+    
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("HocSinh{");
+        sb.append("maSo=").append(maSo);
+        sb.append(", hoTen=").append(hoTen);
+        sb.append(", dtb=").append(dtb);
+        sb.append(", dtb=").append(this.rank());
+        sb.append('}');
+        return sb.toString();
+    }
+    
     
     
     

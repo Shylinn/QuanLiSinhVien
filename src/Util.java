@@ -12,9 +12,10 @@ import java.util.Scanner;
  */
 public class Util {
         public static String inputString(String message){
-            System.out.println(message);
+//            System.out.println(message);
+
             Scanner sc =new Scanner(System.in);
-            String result=sc.nextLine();
+            String result;
             do{
                 System.out.println(message);
                 result=sc.nextLine();
@@ -26,27 +27,25 @@ public class Util {
             
             
         }
+        
         public static Float inputFloat(String message){
-           String floatValue;
+            String str;
             Float result=null;
             do{
-                  floatValue=Util.inputString(message);
+                str=Util.inputString(message);
                 try {
-              
-               result=Float.valueOf(floatValue);
-                    
+                    result=Float.valueOf(str);
                 } catch (Exception e) {
                 }
-     
-                
             }
             while(result==null);
             return result;
+            
 
+            }
             
             
-        
-        }
+      
         
     
     
